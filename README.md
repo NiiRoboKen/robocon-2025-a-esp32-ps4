@@ -29,9 +29,14 @@ https://github.com/Netetra/sbtp
 
 ---
 
+#### 独立ステアリングリセット
+```
+| 0x10 |
+```
+
 #### 独立ステアリング状態送信(並進)
 ```
-| 0x10 | duty (uint8_t) | theta (int16_t) | state (uint8_t) |
+| 0x11 | duty (uint8_t) | theta (int16_t) | state (uint8_t) |
 ```
 - `duty`には0~100の値が入る
 - `theta`の単位はdegree で-180から180の値が入る
@@ -39,7 +44,7 @@ https://github.com/Netetra/sbtp
 
 #### 独立ステアリング状態送信(車体回転)
 ```
-| 0x11 | is_cw (uint8_t) | duty (uint8_t) | state (uint8_t) |
+| 0x12 | is_cw (uint8_t) | duty (uint8_t) | state (uint8_t) |
 ```
 - `is_cw`には回転方向を入れる(時計回りなら1、反時計回りなら0 )
 - `duty`には0~100の値が入る
