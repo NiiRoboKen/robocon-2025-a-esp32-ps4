@@ -50,10 +50,43 @@ https://github.com/Netetra/sbtp
 - `duty`には0~100の値が入る
 - `state` には車輪を回すかどうかのフラグ(ONなら1、OFFなら0)
 
-### ロジャー展開
+#### ロジャー展開
 ```
-| 0x20 | is_move (uint8_t) | is_up (uint8_t) | 
+| 0x20 | duty (uint8_t) | is_up (uint8_t) | 
 ```
-- `is_move`には1か0が入ります(動くなら1)
+- `duty`には0から100が入ります
 - `is_up`には1か0が入ります(展開なら1)
+
+#### 右アーム動作
+```
+| 0x31 | is_open | is_open_move | is_fold | is_fold_move |
+```
+- `is_open`には1か0が入ります(展開なら1)
+- `is_open_move`には1か0が入ります(動くなら1)
+- `is_fold`には1か0が入ります(掴むなら1)
+- `is_fold_move`には1か0が入ります(動くなら1)
+
+#### 左アーム動作
+```
+| 0x32 | is_open | is_open_move | is_fold | is_fold_move |
+```
+- `is_open`には1か0が入ります(展開なら1)
+- `is_open_move`には1か0が入ります(動くなら1)
+- `is_fold`には1か0が入ります(掴むなら1)
+- `is_fold_move`には1か0が入ります(動くなら1)
+
+#### 右アーム昇降
+```
+| 0x41 | duty (uint8_t) | is_up (uint8_t) | 
+```
+- `duty`には0から100が入ります
+- `is_up`には1か0が入ります(上昇なら1)
+
+#### 左アーム昇降
+```
+| 0x42 | duty (uint8_t) | is_up (uint8_t) | 
+```
+- `duty`には0から100が入ります
+- `is_up`には1か0が入ります(上昇なら1)
+
 
