@@ -89,4 +89,22 @@ https://github.com/Netetra/sbtp
 - `duty`には0から100が入ります
 - `is_up`には1か0が入ります(上昇なら1)
 
+#### 2リンクアーム右duty
+```
+| 0x51 | duty1 (uint8_t) | dir1 (uint8_t) | duty2 (uint8_t) | dir1 (uint8_t) |
+```
+- `duty`には0から100が入ります
+- `dir`には0か1が入ります
 
+#### 2リンクアーム左duty
+```
+| 0x52 | duty1 (uint8_t) | dir1 (uint8_t) | duty2 (uint8_t) | dir1 (uint8_t) |
+```
+- `duty`には0から100が入ります
+- `dir`には0か1が入ります
+
+#### 吸引
+```
+| 0x60 | is_on (uint8_t) |
+```
+- `is_on`には0か1が入ります(onなら1)

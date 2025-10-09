@@ -8,6 +8,7 @@ namespace send
         void reset() {
             uint8_t data[1] = {0x10};
             sendSBTP(data, 1);
+            delay(80);
         }
         //duty 0 ~ 100 , theta -180 ~ 180, state 1 or 0
         void rotate_duty(uint8_t duty, int16_t theta, uint8_t state) {
@@ -49,5 +50,20 @@ namespace send
             uint8_t data[3] = {0x42, duty, up};
             sendSBTP(data, 3);
         } 
+    }
+    namespace front_arm{
+        void moveRight(uint8_t duty1, uint8_t dir1, uint8_t duty2, uint8_t dir2) {
+            uint8_t data[5] = {0x51, duty1, dir1, duty1, dir2};
+            sendSBTP(data,5);
+        }
+        void moveLeft(uint8_t duty1, uint8_t dir1, uint8_t duty2, uint8_t dir2) {
+            uint8_t data[5] = {0x52, duty1, dir1, duty1, dir2};
+            sendSBTP(data,5);
+        }
+        void suction(bool is_on) {
+            uint8_t on = is_on ? 1 : 0;
+            uint8_t data[2] = {0x60, on};
+            sendSBTP(data, 3);
+        }
     }
 }
