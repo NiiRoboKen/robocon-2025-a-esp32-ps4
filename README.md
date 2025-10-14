@@ -57,6 +57,20 @@ https://github.com/Netetra/sbtp
 - `duty`には0から100が入ります
 - `is_up`には1か0が入ります(展開なら1)
 
+#### ロジャー展開 右
+```
+| 0x21 | duty (uint8_t) | is_up (uint8_t) | 
+```
+- `duty`には0から100が入ります
+- `is_up`には1か0が入ります(展開なら1)
+
+#### ロジャー展開 左
+```
+| 0x22 | duty (uint8_t) | is_up (uint8_t) | 
+```
+- `duty`には0から100が入ります
+- `is_up`には1か0が入ります(展開なら1)
+
 #### 右アーム動作
 ```
 | 0x31 | is_open | is_open_move | is_fold | is_fold_move |
