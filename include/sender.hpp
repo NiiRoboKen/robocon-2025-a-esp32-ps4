@@ -53,17 +53,17 @@ namespace send
     }
     namespace front_arm{
         void moveRight(uint8_t duty1, uint8_t dir1, uint8_t duty2, uint8_t dir2) {
-            uint8_t data[5] = {0x51, duty1, dir1, duty1, dir2};
+            uint8_t data[5] = {0x51, duty1, dir1, duty2, dir2};
             sendSBTP(data,5);
         }
         void moveLeft(uint8_t duty1, uint8_t dir1, uint8_t duty2, uint8_t dir2) {
-            uint8_t data[5] = {0x52, duty1, dir1, duty1, dir2};
+            uint8_t data[5] = {0x52, duty1, dir1, duty2, dir2};
             sendSBTP(data,5);
         }
         void suction(bool is_on) {
             uint8_t on = is_on ? 1 : 0;
             uint8_t data[2] = {0x60, on};
-            sendSBTP(data, 3);
+            sendSBTP(data, 2);
         }
     }
 }
