@@ -65,5 +65,16 @@ namespace send
             uint8_t data[2] = {0x60, on};
             sendSBTP(data, 2);
         }
+        void suctionRight(bool is_on) {
+            uint8_t on = is_on ? 1 : 0;
+            uint8_t data[2] = {0x61, on};
+            sendSBTP(data, 2);
+        }
+        void suctionLeft(bool is_on) {
+            uint8_t on = is_on ? 1 : 0;
+            uint8_t data[2] = {0x62, on};
+            sendSBTP(data, 2);
+        }
+
     }
 }

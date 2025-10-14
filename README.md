@@ -108,3 +108,13 @@ https://github.com/Netetra/sbtp
 | 0x60 | is_on (uint8_t) |
 ```
 - `is_on`には0か1が入ります(onなら1)
+
+#### 吸引(Right)
+```
+| 0x61 | is_on (uint8_t) |
+```
+
+#### 吸引(Left)
+```
+| 0x62 | is_on (uint8_t) |
+```
